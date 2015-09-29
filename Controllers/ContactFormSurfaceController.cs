@@ -54,7 +54,7 @@ namespace AarhusWebCoop.Controllers
                 smtp.EnableSsl = true;
                 smtp.Host = "smtp.gmail.com"; 
                 smtp.Port = 587;
-                smtp.Credentials = new System.Net.NetworkCredential("slsl54511@gmail.com", "oKl8h67a");
+                smtp.Credentials = new System.Net.NetworkCredential("slsl54511@gmail.com", "password");
                 smtp.EnableSsl = true;
                 try
                 {
