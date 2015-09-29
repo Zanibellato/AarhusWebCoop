@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Macros.PartialViewMacroPage
+
+@{
+	var numberOfProjectsToDisplay = 2; @*Change this to display more projects*@
+	var startNode = Umbraco.TypedContent(1072);
+	var completedProjects = startNode.Children().Where("Status.Contains(\"Completed\")").OrderBy("CreateDate desc");
+	var projectsToDisplay = completedProjects.Take(numberOfProjectsToDisplay);
+}
+
+<div class="col-md-12">
+	<h3>List of the last @numberOfProjectsToDisplay completed projects</h3>
+	<ul>
+	@foreach (var project in projectsToDisplay){
+		<li>@project.Name</li>
+	}
+	<ul>
+</div>
+
