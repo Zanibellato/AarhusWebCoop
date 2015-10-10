@@ -4,30 +4,46 @@ var memberService = ApplicationContext.Current.Services.MemberService;
 var activeMembers = memberService.GetMembersByGroup("Active");
 var prospectMembers = memberService.GetMembersByGroup("Prospect");
 }
-
 <h2>Active Members</h2>
 @foreach (var member in activeMembers)
 {
-	<p class="text-primary">
-		@(member.GetValue("firstname") + " "
-		+ member.GetValue("lastname")) <br/>
-	</p>
-	<p>
-		@member.GetValue("address")<br />
-		@(member.GetValue("zip") + " "
-		+ member.GetValue("city"))<br />
-		Mobile: @member.GetValue("mobile")<br />
-	</p>
+		
+		string fullPath = member.GetValue("photo").ToString();
+		string[] substrings = fullPath.Split(',');
+		string srcString = substrings[2];
+		string[] srcSubStrings = srcString.Split(':');
+		string srcPath = srcSubStrings[1].Replace("\"", "");
+	<div class="row">
+		<div class="col-md-2">
+			<img class="img-responsive" src='@srcPath' />   
+		</div>
+		<div class="col-md-10">
+			<p class="text-primary">
+				@(member.GetValue("firstname") + " "
+				+ member.GetValue("lastname")) <br/>
+			</p>
+			<p>
+				@member.GetValue("address")<br />
+				@(member.GetValue("zip") + " "
+				+ member.GetValue("city"))<br />
+				Mobile: @member.GetValue("mobile")<br />
+			</p>
+		</div>
+	</div>
 }
-
-<h2>Prospect Members</h2>
-@foreach (var member in prospectMembers) 
-{
-	<p class="text-primary">
-		@(member.GetValue("firstname") + " "
-		+ member.GetValue("lastname")) <br/>
-	</p>
-	<p>
-		Mobile: @member.GetValue("mobile")<br />
-	</p>
-}
+	<h2>Prospect Members</h2>
+	@foreach (var member in prospectMembers) 
+	{
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div class="col-md-10">
+			<p class="text-primary">
+				@(member.GetValue("firstname") + " "
+				+ member.GetValue("lastname")) <br/>
+			</p>
+			<p>
+				Mobile: @member.GetValue("mobile")<br />
+			</p>
+		</div>
+	</div>
+	}

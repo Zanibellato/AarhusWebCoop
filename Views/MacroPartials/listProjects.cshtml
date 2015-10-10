@@ -5,7 +5,10 @@
 @foreach (var page in CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"))
 { 
     <div class="article">
-        <div class="articletitle"><a href="@page.Url">@page.Name</a></div>
+        <div class="articletitle">
+			<a href="@page.Url">@page.Name</a>
+			<p>Date: @page.CreateDate.ToString("dd/MM/yyyy")</p>
+		</div>
         <div class="articlepreview">@Umbraco.Truncate(@page.ProjectContents,100) <a href="@page.Url">Read More..</a></div>
     </div>
     <hr/>

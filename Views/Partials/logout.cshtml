@@ -32,12 +32,14 @@
 {
     <p>You are currently logged in as @loginStatusModel.Name</p>
 
-    using (Html.BeginUmbracoForm<UmbLoginStatusController>("HandleLogout"))
+    using (Html.BeginUmbracoForm<UmbLoginStatusController>("HandleLogout", new object { }, new { @class = "form-horizontal" }))
     {
-         <fieldset>
-             <legend>Logout</legend>
-             <button class="btn btn-info">Logout</button>
-         </fieldset>
+		<div class="form-group">
+				<div class="col-sm-2">
+					<button type="submit" class="btn btn-info">Logout</button>
+				</div>
+				<div class="col-sm-10"></div>
+		</div>
     
         @Html.HiddenFor(m => logoutModel.RedirectUrl)
     }
