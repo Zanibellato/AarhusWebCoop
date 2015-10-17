@@ -1,0 +1,23 @@
+GitHub link
+
+https://github.com/Zanibellato/AarhusWebCoop.git
+
+---------------------------------------------
+
+Umbraco backoffice
+
+User: v.zanibellato@outlook.com
+Password: 1234
+
+---------------------------------------------
+
+Active Member
+
+User: jimy
+Password: 1234
+
+---------------------------------------------
+
+Prospect Member
+User: bob
+Password: 1234
