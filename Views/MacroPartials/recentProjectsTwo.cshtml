@@ -8,10 +8,10 @@
 }
 
 <div class="col-md-12">
-	<h3>Her you can find the last @numberOfProjectsToDisplay completed projects:</h3>
+	<h3>The last @numberOfProjectsToDisplay completed projects:</h3>
 	<ul>
 	@foreach (var project in projectsToDisplay){
-		<li><a href="@project.Url">@project.Name</a></li>
+		<li><a class="text-primary" href="@project.Url">@project.Name <span class="label label-success">New</span></a></li>
 	}
 	<ul>
 </div>

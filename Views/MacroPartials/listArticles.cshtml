@@ -5,8 +5,8 @@
 @foreach (var page in CurrentPage.Children.Where("Visible").OrderBy("CreateDate desc"))
 { 
     <div class="article">
-        <div class="articletitle"><a href="@page.Url">@page.Name</a></div>
-        <div class="articlepreview">@Umbraco.Truncate(@page.ArticleContents,100) <a href="@page.Url">Read More..</a></div>
+        <div class="articletitle"><a class="text-primary" href="@page.Url">@page.Name</a></div>
+        <div class="articlepreview">@Umbraco.Truncate(@page.ArticleContents,100) <a class="btn btn-info" href="@page.Url">Read More</a></div>
     </div>
     <hr/>
 }

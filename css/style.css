@@ -2,3 +2,7 @@ body {
 	
 	padding-bottom: 70px; 
 }/* EDITOR PROPERTIES - PLEASE DON'T DELETE THIS LINE TO AVOID DUPLICATE PROPERTIES */
+
+a:hover{
+    text-decoration: none;
+}
