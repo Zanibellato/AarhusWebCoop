@@ -42,6 +42,10 @@
 						@*Verifying if the childPage is a ProjectItem*@
 						if(childPage.DocumentTypeAlias == "ProjectItem")
 						{
+							@* Remove the comment to display all the projects
+							<li><a href="@childPage.Url">@childPage.Name</a></li>
+							*@
+							
 							@*Verifying if the ProjectItem is completed*@
 							if(childPage.Status == "Completed"){
 								
@@ -50,7 +54,7 @@
 							}
 						}
 						else{
-						@*If ypu are here the childPage is not a ProjectItem*@
+						@*If you are here the childPage is not a ProjectItem*@
 							
 							@*Creating the submenu element for the node*@
 							<li><a href="@childPage.Url">@childPage.Name</a></li>
